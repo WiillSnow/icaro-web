@@ -32,8 +32,24 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, .titulo-proyectos, .titulo-soluciones {
+h1, h2, h3, .titulo-proyectos, .titulo-soluciones, .titulo-cotiza {
   font-family: 'Kallisto', sans-serif;
+
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #0033a0;
+}
+
+.titulo-cotiza{
+  text-align: left;
+}
+
+.titulo-nosotros{
+  text-align: center;
+}
+
+p {
+  font-family: 'Effra', sans-serif;
 }
 
 .resaltado {
@@ -140,6 +156,7 @@ header img#logo {
   font-weight: 600;
   transition: color 0.3s ease;
   align-items: center;
+  font-family: 'Effra', sans-serif;
 }
 
 .btn-contorno:hover {
@@ -235,7 +252,7 @@ header.scrolled img#logo {
   top: 0; left: 0; 
   width: 100%; height: 100%;
   background-image: url('/img/icaro-negro.svg');
-  background-size: 120%;
+  background-size: 100%;
   background-position: center -330px;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -298,7 +315,7 @@ header.scrolled img#logo {
 }
 
 .fondo-soluciones {
-  background-image: url('/img/bkg1.svg');
+  background-color: white;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -316,11 +333,10 @@ header.scrolled img#logo {
 
 
 .titulo-soluciones {
-  font-size: 2.5rem;
   text-align: center;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #0033a0;
-  font-weight: bold;
 }
 
 
@@ -520,7 +536,7 @@ header.scrolled img#logo {
 /* Proyectos */
 
 .seccion-proyectos {
-  background-image: url('/img/bkg1.png');
+  background-color: white;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -634,7 +650,7 @@ header.scrolled img#logo {
 
 .cotizacion-section {
   padding: 4rem 4rem;
-  background-image: url('/img/bkg2.svg');
+  background-color: white;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -840,8 +856,8 @@ header.scrolled img#logo {
   .cta-container { text-align: left; }
 }
 .cta-text {
-  font-weight: 700;
-  font-size: 1.125rem;     /* ~18px */
+  font-weight: 100;
+  font-size: 1.5rem;     /* ~18px */
   margin: 0;
 }
 
