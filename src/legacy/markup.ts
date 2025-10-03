@@ -35,14 +35,14 @@ const html = `
   <section id="nosotros" class="nosotros-section">
     <div class="container nosotros-container">
      <div class="nosotros-texto">
-        <h2>¿Quiénes somos?</h2>
+        <h2 class="titulo-nosotros">¿Quiénes somos?</h2>
           <p>En <strong>ÍCARO SOLAR</strong> somos una empresa jóven, profesional y comprometida con el futuro energético sustentable. <br><br>
            Creemos en un enfoque integral que va más allá de la instalación: analizamos el <strong>consumo energético</strong> real, proponemos <strong>alternativas eficientes</strong> y acompañamos a nuestros clientes durante todo el proceso, desde la cotización hasta el <strong>seguimiento post-venta</strong>. Nuestro compromiso es con las personas: brindamos <strong>atención personalizada, soluciones claras y resultados comprobables.</strong> <br><br>
            La energía solar deja de ser una promesa del futuro y se convierte en una realidad <strong>inmediata, accesible y rentable.</strong>
           </p>
     </div>
       <div class="nosotros-imagen">
-        <img src="/img/nosotros.webp" alt="Imagen de nosotros"/>
+        <img src="/img/nosotros.png" alt="Imagen de nosotros"/>
       </div>
     </div>
   </section>
@@ -50,7 +50,7 @@ const html = `
   <!-- Sección Soluciones -->
   <section id="soluciones" class="fondo-soluciones">
     <div class="soluciones-wrapper">
-      <h2 class="titulo-soluciones">Conoce nuestras propuestas</h2>  
+      <h2 class="titulo-soluciones">Conoce Nuestras Propuestas</h2>  
       <div class="soluciones">
         <div class="solucion" style="background-image: url('/img/Tec11.webp');" onclick="openModal('modal1')">
           <div class="overlay">
