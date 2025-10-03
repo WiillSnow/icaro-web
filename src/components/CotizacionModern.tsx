@@ -26,7 +26,7 @@ export default function CotizacionModern() {
         <div className="max-w-2xl">
           
     {/* P1 */}
-          <h2 class="titulo-cotiza">
+          <h2 className="titulo-cotiza">
           Solicita una cotización
           </h2>
           <div className="h-6" aria-hidden="true"></div>
