@@ -550,7 +550,7 @@ header.scrolled img#logo {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #f0b800;
+  color: #0033a0;
 }
 
 .galeria-proyectos {
@@ -613,6 +613,7 @@ header.scrolled img#logo {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
+  color: white;
 }
 
 .proyecto-info p {
