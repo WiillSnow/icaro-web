@@ -10,6 +10,11 @@ const PHONE_DISPLAY = "+52 999 214 4601";     // visible
 const PHONE_E164 = "+529992144601";           // E.164 p/JSON-LD y links tel:
 // ================================================
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   applicationName: "ÍCARO SOLAR",
   metadataBase: new URL(DOMAIN),
