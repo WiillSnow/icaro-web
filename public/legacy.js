@@ -1,11 +1,23 @@
 // public/legacy.js
-
 function openModal(id) {
-  document.getElementById(id).style.display = "flex";
+  const m = document.getElementById(id);
+  if (!m) return;
+  m.style.display = "flex";
+  document.body.classList.add("modal-open");     // <— bloquea scroll del body
+  // cerrar tocando el fondo (una vez)
+  if (!m._backdropBound) {
+    m.addEventListener("click", (e) => { if (e.target === m) closeModal(id); });
+    m._backdropBound = true;
+  }
 }
+
 function closeModal(id) {
-  document.getElementById(id).style.display = "none";
+  const m = document.getElementById(id);
+  if (!m) return;
+  m.style.display = "none";
+  document.body.classList.remove("modal-open");  // <— reanuda scroll del body
 }
+
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
