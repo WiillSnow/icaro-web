@@ -1550,6 +1550,98 @@ body, .cot-modern {
 /* Mostrar botón en móvil */
 @media (max-width: 768px) { .hamburger-btn { display: inline-block; } }
 
+/* ===== MODAL: mejoras generales (desktop + tablet) ===== */
+.modal { 
+  z-index: 2000;                 /* por encima del header fijo */
+  padding: 24px;                 /* respiración alrededor del contenido */
+}
+.modal-content {
+  width: min(1100px, 92vw);      /* limita ancho en pantallas grandes */
+  height: min(86dvh, 900px);     /* no excede alto de la ventana */
+  border-radius: 16px;
+  overflow: hidden;              /* evita desbordes del hijo */
+}
+.modal-img { 
+  flex: 1.4;                     /* imagen un poco más ancha en desktop */
+}
+.modal-text { 
+  flex: 1; 
+  padding: 24px; 
+  overflow-y: auto;              /* el texto scrollea dentro del panel */
+  -webkit-overflow-scrolling: touch;
+}
+.modal-text h2 {
+  font-size: clamp(22px, 3.2vw, 28px);
+  margin: 0 0 12px 0;
+}
+.modal-text p { 
+  font-size: 1rem; 
+  line-height: 1.65; 
+  margin: 0 0 10px 0;
+}
+.modal-text ul { 
+  padding-left: 1.2rem; 
+  margin: 8px 0 0 0; 
+}
+
+/* Botón cerrar siempre visible */
+.close {
+  position: absolute;
+  top: 10px; right: 12px;
+  font-size: 28px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  z-index: 2100;
+}
+
+/* ===== TABLET (apilado si hace falta) ===== */
+@media (max-width: 1024px) {
+  .modal-content {
+    width: 94vw;
+    height: auto;                 /* deja crecer por contenido */
+    max-height: 90dvh;            /* pero con límite */
+    flex-direction: column;       /* apila imagen + texto */
+  }
+  .modal-img { 
+    flex: none; 
+    height: 42vh;                 /* alto visual cómodo para la foto */
+    min-height: 260px;
+  }
+  .modal-img img { width: 100%; height: 100%; object-fit: cover; }
+  .modal-text { padding: 18px; }
+}
+
+/* ===== MÓVIL ===== */
+@media (max-width: 768px) {
+  .modal { padding: 12px; }
+  .modal-content {
+    width: 100%;
+    height: auto;
+    max-height: calc(100dvh - 24px); /* llena pantalla con margen mínimo */
+    border-radius: 12px;
+    flex-direction: column;
+  }
+  .modal-img { 
+    height: 40vh;                 /* imagen arriba, recortada */
+    min-height: 220px;
+  }
+  .modal-img img { width: 100%; height: 100%; object-fit: cover; }
+  .modal-text { 
+    padding: 16px; 
+    font-size: .975rem;
+  }
+  .modal-text h2 { 
+    font-size: clamp(20px, 5vw, 24px); 
+    margin-bottom: 10px; 
+  }
+  .close { font-size: 26px; top: 8px; right: 10px; }
+}
+
+/* Bloquea el scroll de la página detrás del modal */
+body.modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
 
 
 
