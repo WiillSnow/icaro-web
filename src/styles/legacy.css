@@ -1501,34 +1501,31 @@ body, .cot-modern {
   }
   .proyecto-card { width: 80vw !important; max-width: 360px; height: 340px !important; }
 }
-/* ===== FIX MOBILE - PROPUESTAS / PROYECTOS ===== */
+
+
+/* ===== CONTACT BOX - MOBILE ===== */
 @media (max-width: 768px) {
-  .soluciones-wrapper { height: auto !important; padding: 1rem 1rem 2.5rem !important; }
-  .fondo-soluciones { background-size: cover !important; padding: 2rem 0 2.5rem !important; }
-  .soluciones { flex-direction: column !important; height: auto !important; gap: 16px; }
-
-  /* Títulos con aire extra para que no se “pierdan” */
-  .titulo-soluciones { margin: 0 0 1.25rem 0 !important; }
-  .titulo-proyectos  { margin: 1.5rem 0 1.25rem 0 !important; }
-
-  /* Proyectos: menos altura mínima y más padding */
-  .seccion-proyectos {
+  .contact-box {
+    left: .75rem !important;
+    right: auto !important;
+    bottom: .75rem !important;
+    top: auto !important;
+    transform: none !important;
+    padding: .55rem .75rem !important;
+    max-width: 170px !important;
     min-height: auto !important;
-    padding: 2rem 1rem 2.5rem !important;
-    background-size: cover !important;
-    background-position: center !important;
+    max-height: none !important;
+    font-size: .9rem !important;
+    opacity: .92;
   }
-
-  /* Galería scrolleable en horizontal (mejor UX en móvil) */
-  .galeria-proyectos {
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-    gap: 1rem !important;
-    padding-bottom: 0.5rem !important;
-    -webkit-overflow-scrolling: touch;
-  }
-  .proyecto-card { width: 80vw !important; max-width: 360px; height: 340px !important; }
 }
+/* Si prefieres ocultarla del todo en móvil, usa esto en vez de lo anterior: */
+/*
+@media (max-width: 768px) {
+  .contact-box { display: none !important; }
+}
+*/
+
 
 /* ===== HAMBURGER MÁS ROBUSTO (iOS friendly) ===== */
 .hamburger-btn { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px;
