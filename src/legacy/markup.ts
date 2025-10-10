@@ -6,7 +6,7 @@ const html = `
       <div class="logo">
         <img src="/img/icaro-blanco.png" id="logo" alt="Ícaro Solar">
       </div>
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav"> //cambios id="main-nav"
         <ul class="nav-links">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
@@ -20,6 +20,20 @@ const html = `
           <li><a href="/faqs">FAQs</a></li>
         </ul>
       </nav>
+//cambios
+
+<button
+  class="hamburger-btn"
+  aria-label="Abrir menú"
+  aria-controls="main-nav"
+  aria-expanded="false"
+>
+  <span class="hb-line"></span>
+  <span class="hb-line"></span>
+  <span class="hb-line"></span>
+</button>
+
+      
     </div>
   </header>
 
