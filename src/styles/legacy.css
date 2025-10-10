@@ -550,7 +550,7 @@ header.scrolled img#logo {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #0033a0;
+  color: #f0b800;
 }
 
 .galeria-proyectos {
@@ -1470,5 +1470,87 @@ body, .cot-modern {
     padding: 0 2rem 0 0;
   }
 }
+
+/* ===== FIX MOBILE - PROPUESTAS / PROYECTOS ===== */
+@media (max-width: 768px) {
+  .soluciones-wrapper { height: auto !important; padding: 1rem 1rem 2.5rem !important; }
+  .fondo-soluciones { background-size: cover !important; padding: 2rem 0 2.5rem !important; }
+  .soluciones { flex-direction: column !important; height: auto !important; gap: 16px; }
+
+  /* Títulos con aire extra para que no se “pierdan” */
+  .titulo-soluciones { margin: 0 0 1.25rem 0 !important; }
+  .titulo-proyectos  { margin: 1.5rem 0 1.25rem 0 !important; }
+
+  /* Proyectos: menos altura mínima y más padding */
+  .seccion-proyectos {
+    min-height: auto !important;
+    padding: 2rem 1rem 2.5rem !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* Galería scrolleable en horizontal (mejor UX en móvil) */
+  .galeria-proyectos {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    gap: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .proyecto-card { width: 80vw !important; max-width: 360px; height: 340px !important; }
+}
+/* ===== FIX MOBILE - PROPUESTAS / PROYECTOS ===== */
+@media (max-width: 768px) {
+  .soluciones-wrapper { height: auto !important; padding: 1rem 1rem 2.5rem !important; }
+  .fondo-soluciones { background-size: cover !important; padding: 2rem 0 2.5rem !important; }
+  .soluciones { flex-direction: column !important; height: auto !important; gap: 16px; }
+
+  /* Títulos con aire extra para que no se “pierdan” */
+  .titulo-soluciones { margin: 0 0 1.25rem 0 !important; }
+  .titulo-proyectos  { margin: 1.5rem 0 1.25rem 0 !important; }
+
+  /* Proyectos: menos altura mínima y más padding */
+  .seccion-proyectos {
+    min-height: auto !important;
+    padding: 2rem 1rem 2.5rem !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* Galería scrolleable en horizontal (mejor UX en móvil) */
+  .galeria-proyectos {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    gap: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .proyecto-card { width: 80vw !important; max-width: 360px; height: 340px !important; }
+}
+
+/* ===== HAMBURGER MÁS ROBUSTO (iOS friendly) ===== */
+.hamburger-btn { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px;
+  border: 0; background: transparent; display: none; z-index: 1200; line-height: 0; }
+
+.hamburger-btn .hb-line {
+  position: absolute; left: 9px; right: 9px; height: 2px;
+  background: #fff; border-radius: 2px;
+  transform-origin: 50% 50%;
+  transition: transform .25s ease, opacity .2s ease, background-color .25s ease;
+}
+.hamburger-btn .hb-line:nth-child(1) { top: 14px; }
+.hamburger-btn .hb-line:nth-child(2) { top: 21px; }
+.hamburger-btn .hb-line:nth-child(3) { top: 28px; }
+
+/* Estado abierto (X) */
+.main-header.menu-open .hb-line { background: #0033a0; }
+.main-header.menu-open .hb-line:nth-child(1) { transform: rotate(45deg); }
+.main-header.menu-open .hb-line:nth-child(2) { opacity: 0; }
+.main-header.menu-open .hb-line:nth-child(3) { transform: rotate(-45deg); }
+
+/* Mostrar botón en móvil */
+@media (max-width: 768px) { .hamburger-btn { display: inline-block; } }
+
+
 
 
