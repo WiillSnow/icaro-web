@@ -30,3 +30,52 @@ window.addEventListener('scroll', () => {
     contactBox.style.display = 'none';
   }
 });
+
+// === Menú hamburguesa ===
+(function () {
+  const header = document.querySelector(".main-header");
+  const btn = document.querySelector(".hamburger-btn");
+  const nav = document.getElementById("main-nav");
+
+  if (!header || !btn || !nav) return;
+
+  const closeMenu = () => {
+    header.classList.remove("menu-open");
+    btn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = ""; // desbloquea scroll
+  };
+
+  const openMenu = () => {
+    header.classList.add("menu-open");
+    btn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden"; // bloquea scroll de fondo
+  };
+
+  btn.addEventListener("click", () => {
+    if (header.classList.contains("menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Cerrar al hacer click en cualquier enlace del nav (mejor UX)
+  nav.addEventListener("click", (e) => {
+    const t = e.target;
+    if (t && t.closest("a")) closeMenu();
+  });
+
+  // Cerrar con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Cerrar si cambias a escritorio (>768px)
+  let lastW = window.innerWidth;
+  window.addEventListener("resize", () => {
+    const w = window.innerWidth;
+    if (lastW <= 768 && w > 768) closeMenu();
+    lastW = w;
+  });
+})();
+
