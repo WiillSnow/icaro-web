@@ -1371,3 +1371,104 @@ body, .cot-modern {
   box-shadow: 0 0 0 3px rgba(44,90,157,.15);
 }
 
+/* =======================
+   Menú hamburguesa (mobile)
+   ======================= */
+
+/* Botón hamburguesa: oculto en escritorio */
+.hamburger-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  display: none;          /* visible solo en mobile */
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;          /* por encima del header */
+  cursor: pointer;
+}
+
+/* Líneas del ícono */
+.hb-line {
+  width: 26px;
+  height: 2px;
+  background: #fff;       /* blanco sobre hero */
+  display: block;
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease, background-color .25s ease;
+}
+.hb-line + .hb-line { margin-top: 6px; }
+
+/* Estado "X" cuando se abre el menú */
+.main-header.menu-open .hb-line { background: #0033a0; } /* azul cuando el panel es blanco */
+.main-header.menu-open .hb-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.main-header.menu-open .hb-line:nth-child(2) { opacity: 0; }
+.main-header.menu-open .hb-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ===== Mobile panel (reutiliza .main-nav) ===== */
+@media (max-width: 768px) {
+  .hamburger-btn { display: inline-flex; }
+
+  /* El nav se convierte en panel desplegable de pantalla completa */
+  .main-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 100svh;                 /* pantalla completa mobile */
+    padding: 96px 24px 24px;        /* hueco para logo/btn arriba */
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: saturate(180%) blur(6px);
+    z-index: 1100;
+    transform: translateY(-100%);
+    transition: transform .25s ease;
+    display: grid;
+    align-content: start;
+    gap: 16px;
+  }
+  /* Cuando está abierto */
+  .main-header.menu-open .main-nav { transform: translateY(0); }
+
+  /* En scroll (tu header achica logo), ajusta padding top del panel */
+  .main-header.scrolled .main-nav { padding-top: 72px; }
+
+  /* En el panel, los links van en columna y con texto oscuro */
+  .nav-links, .btn-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0;
+  }
+  .nav-links li a,
+  .btn-links li a {
+    color: #0033a0;        /* azul marca en panel */
+    font-size: 1.05rem;
+  }
+  .btn-contorno {
+    border-color: #0033a0;
+    color: #0033a0;
+  }
+
+  /* En el header (banda superior), los links siguen en blanco */
+  .main-header:not(.menu-open) .nav-links li a,
+  .main-header:not(.menu-open) .btn-links li a {
+    color: #fff;
+  }
+}
+
+/* Escritorio: nav como lo tenías */
+@media (min-width: 769px) {
+  .main-nav {
+    position: static;
+    transform: none !important;
+    background: transparent;
+    backdrop-filter: none;
+    display: flex;
+    align-content: center;
+    height: auto;
+    padding: 0 2rem 0 0;
+  }
+}
+
+
