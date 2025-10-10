@@ -1179,3 +1179,195 @@ header.scrolled img#logo {
  font-family: 'Effra', sans-serif;
  color: #333;
 }
+
+/* ===========================================================
+   Ajustes base para responsividad
+   =========================================================== */
+:root { --site-wrap: 1200px; }
+.container, .tw-wrap {
+  max-width: var(--site-wrap);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* Usa unidades seguras en móviles para alturas de viewport */
+.hero {
+  min-height: 100svh; /* iOS/Android modernos */
+  min-height: 100vh;  /* fallback */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Tipografías más fluidas */
+.hero-text h1 { font-size: clamp(28px, 7vw, 48px); line-height: 1.15; }
+.hero-text p  { font-size: clamp(16px, 4.2vw, 20px); }
+
+/* ===========================================================
+   Breakpoint tablet (<= 1024px)
+   =========================================================== */
+@media (max-width: 1024px) {
+  /* Header */
+  header img#logo { height: 120px; margin-top: 16px; margin-left: 16px; }
+  .main-nav { padding-right: 1rem; }
+  .nav-links { gap: 1rem; }
+  .btn-links { padding: 0 .75rem; gap: .75rem; }
+
+  /* Nosotros */
+  .nosotros-container { gap: 3rem; }
+  .nosotros-imagen { min-width: 0; }
+  .nosotros-imagen img { min-height: 0; }
+
+  /* Propuestas (soluciones) */
+  .soluciones { height: auto; }
+  .solucion { min-height: 300px; }
+
+  /* Proyectos */
+  .seccion-proyectos { padding: 4rem 2rem; }
+
+  /* Cotización (espaciados más amables) */
+  .cotizacion-section { padding: 3rem 1.5rem; background-size: cover; }
+}
+
+/* ===========================================================
+   Breakpoint móvil (<= 768px)
+   =========================================================== */
+@media (max-width: 768px) {
+  /* Header: apila logo + menú y reduce tamaño */
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+    padding: .5rem 1rem 0 1rem;
+  }
+  header img#logo {
+    height: 88px;
+    margin: 8px 0 0 0;
+    transition: height .25s ease, margin .25s ease;
+  }
+  header.scrolled img#logo { height: 56px; }
+
+  .main-nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    justify-content: flex-start;
+    margin-top: .25rem;
+    padding-right: 0;
+  }
+  .nav-links, .btn-links {
+    gap: .75rem;
+    padding: 0;
+  }
+  .nav-links li a, .btn-links li a {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero { min-height: 80svh; }
+  .hero-text { padding: 0 8px; }
+
+  /* Nosotros: apila */
+  .nosotros-container {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .nosotros-texto h2 { font-size: clamp(24px, 6vw, 32px); }
+  .nosotros-texto p   { font-size: 1rem; line-height: 1.7; text-align: left; }
+  .nosotros-imagen { width: 100%; }
+
+  /* Propuestas (soluciones): columna y más altas para tocar */
+  .fondo-soluciones { background-size: 160%; padding: 2rem 0; }
+  .soluciones { flex-direction: column; gap: 1rem; height: auto; }
+  .solucion  { height: 260px; }
+  .overlay   { padding: 1rem; }
+  .overlay h3 { font-size: 1.25rem; }
+  .overlay p  { font-size: .95rem; }
+
+  /* Modal: formato “pantalla completa” en móvil */
+  .modal-content {
+    width: 92%;
+    height: 86svh;
+    height: 86vh;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .modal-img  { flex: none; height: 48%; }
+  .modal-text { flex: 1; overflow: auto; padding: 1rem; }
+  .close { top: 8px; right: 12px; color: #fff; font-size: 1.8rem; }
+
+  /* Proyectos: carrusel horizontal con snap */
+  .seccion-proyectos { padding: 3rem 1rem; }
+  .galeria-proyectos {
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .5rem;
+  }
+  .proyecto-card {
+    min-width: 260px;
+    width: 80%;
+    height: 340px;
+    scroll-snap-align: start;
+  }
+
+  /* CTA Stripe */
+  .cta-container {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .cta-text { font-size: 1rem; }
+
+  /* Cotización: columna, tipografía y padding interno más amplios */
+  .cotizacion-section {
+    padding: 2rem 1rem;
+    min-height: auto;
+    background-color: #fff !important; /* evita franjas oscuras por dark mode */
+  }
+  .cotizacion-container {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* Si usas el bloque moderno (.cot-modern) */
+  .cot-modern .rounded-2xl { padding: 24px 18px !important; }
+  .cot-modern .cot-title   { font-size: clamp(24px, 6vw, 32px); }
+  .cot-modern p, .cot-modern li, .cot-modern label { font-size: 1rem; }
+  .cot-modern form { display: block; } /* evita grids de 2 columnas */
+  .cot-modern input,
+  .cot-modern select,
+  .cot-modern textarea { width: 100%; }
+
+  /* Footer apilado */
+  .footer-container { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* ===========================================================
+   Afinados varios
+   =========================================================== */
+
+/* Asegura fondo claro siempre (por si el SO está en modo oscuro) */
+body, .cotizacion-section, .tw-wrap, .spacer {
+  background-color: #fff !important;
+}
+
+/* Texto nítido en móviles (reduce “difuminado”) */
+body, .cot-modern {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Inputs con foco claro en cualquier densidad de pantalla */
+.cot-modern input:focus,
+.cot-modern select:focus,
+.cot-modern textarea:focus {
+  outline: none;
+  border-color: #2C5A9D;
+  box-shadow: 0 0 0 3px rgba(44,90,157,.15);
+}
+
