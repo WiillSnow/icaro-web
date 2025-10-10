@@ -8,7 +8,7 @@ export default function SeoJsonLd() {
     "name": "ÍCARO SOLAR",
     "url": "https://www.icarosolar.mx/",
     "image": "https://www.icarosolar.mx/img/icaro-color.png",
-    "telephone": "+529999699146",
+    "telephone": "+529992144601",
     "email": "contacto@icarosolar.mx",
     "address": {
       "@type": "PostalAddress",
@@ -33,3 +33,4 @@ export default function SeoJsonLd() {
     </Script>
   );
 }
+
