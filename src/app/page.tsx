@@ -1,6 +1,7 @@
 // src/app/page.tsx
+import SeoJsonLd from "@/components/SeoJsonLd";
 import markup from "@/legacy/markup";
-import CtaStripe from "@/components/CtaStripe";          // opcional: tu franja CTA
+import CtaStripe from "@/components/CtaStripe";
 import CotizacionModern from "@/components/CotizacionModern";
 
 export default function Page() {
@@ -9,11 +10,19 @@ export default function Page() {
 
   return (
     <>
+      {/* JSON-LD específico de la página (Servicios, FAQs, LocalBusiness, etc.) */}
+      <SeoJsonLd />
+
+      {/* Contenido legacy (antes del slot) */}
       <div dangerouslySetInnerHTML={{ __html: before }} />
-      {/* Franja CTA (déjala o quítala, como prefieras) */}
+
+      {/* Franja CTA */}
       <CtaStripe />
-      {/* Formulario con el estilo exacto del snippet (imagen) */}
+
+      {/* Formulario de cotización */}
       <CotizacionModern />
+
+      {/* Contenido legacy (después del slot) */}
       <div dangerouslySetInnerHTML={{ __html: after }} />
     </>
   );
