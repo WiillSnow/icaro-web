@@ -1643,5 +1643,48 @@ body.modal-open {
   touch-action: none;
 }
 
+/* ===== MODAL (RESTORE DESKTOP SIZE) ===== */
+@media (min-width: 1025px) {
+  .modal { padding: 32px; }
+
+  /* tamaño grande como el original */
+  .modal-content {
+    width: min(1200px, 96vw);   /* puedes usar 90% si lo prefieres: width: 90%; */
+    height: 90vh;               /* vuelve a ocupar casi toda la altura */
+    max-height: none;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;        /* imagen y texto lado a lado */
+    overflow: hidden;
+  }
+
+  .modal-img {
+    flex: 2;                    /* imagen dominante como antes */
+    height: auto;
+    min-width: 0;               /* evita recortes por flexbox */
+  }
+
+  .modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* llena el panel; cambia a 'contain' si NO quieres recorte */
+  }
+
+  .modal-text {
+    flex: 1;
+    padding: 28px;
+    font-size: 1rem;
+    overflow-y: auto;           /* scrollea dentro si hay mucho texto */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .close {                      /* botón cerrar bien visible */
+    font-size: 28px;
+    top: 12px;
+    right: 14px;
+  }
+}
+
+
 
 
